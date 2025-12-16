@@ -1,7 +1,6 @@
-"use client";  // Make sure it's a client component
+"use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Correct import for Next.js 13+
 import { Eye, EyeOff } from 'lucide-react';
 
 const MyPTELoginPage = () => {
@@ -10,17 +9,14 @@ const MyPTELoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();  // Correct usage of useRouter in a client component
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Check if the username and password are correct
-    if (username === 'admin' && password === 'admin123') {
-      // Simulate login success and redirect to the welcome page
+    if (username === 'faizanarshad@pte' && password === 'faizan@35') {
       setTimeout(() => {
-        router.push('/welcome'); // Redirect to the welcome page
+        window.location.href = '/welcome';
         setIsLoading(false);
       }, 1000);
     } else {
@@ -30,39 +26,39 @@ const MyPTELoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] flex items-center justify-center ">
+    <div className="min-h-screen bg-[#f5f5f5] flex items-center justify-center p-4">
       <div className="w-full max-w-[640px] mx-auto">
         {/* Main Card */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6 min-w-[640px] min-h-[710px] mx-auto">
+        <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 mb-6 mx-auto">
           
           {/* Logo */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4 sm:mb-6">
             <img 
-              src="/logo.svg"  // Path to your SVG file in the public directory
+              src="/logo.svg"
               alt="Pearson Logo"
-              className="h-auto max-w-[60%] max-h-[16rem]"
+              className="h-auto w-full max-w-[200px] sm:max-w-[280px]"
             />
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl font-bold text-center text-[#0d004d] font-ja mb-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-center text-[#0d004d] mb-2">
             Welcome to myPTE
           </h1>
 
           {/* Subtitle */}
-          <p className="text-center text-[#666] text-sm mb-8">
+          <p className="text-center text-[#666] text-sm mb-6 sm:mb-8">
             Book your tests and access your results.
           </p>
 
           {/* Username Field */}
-          <div className="mb-6">
+          <div className="mb-4 sm:mb-6">
             <div className="relative">
               <input
                 type="text"
                 id="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-3 border border-[#999] rounded bg-white text-base outline-none focus:border-[#5A3D98] focus:border-2 transition-colors peer placeholder-transparent"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#999] rounded bg-white text-sm sm:text-base outline-none focus:border-[#5A3D98] focus:border-2 transition-colors peer placeholder-transparent"
                 placeholder="Username"
                 autoComplete="off"
               />
@@ -71,7 +67,7 @@ const MyPTELoginPage = () => {
                 className={`absolute left-3 transition-all text-[#666] pointer-events-none ${
                   username
                     ? '-top-2.5 text-xs bg-white px-1'
-                    : 'top-3 text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:bg-white peer-focus:px-1'
+                    : 'top-2.5 sm:top-3 text-sm sm:text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:bg-white peer-focus:px-1'
                 }`}
               >
                 Username
@@ -80,14 +76,14 @@ const MyPTELoginPage = () => {
           </div>
 
           {/* Password Field */}
-          <div className="mb-6">
+          <div className="mb-4 sm:mb-6">
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 pr-12 border border-[#999] rounded bg-white text-base outline-none focus:border-[#5A3D98] focus:border-2 transition-colors peer placeholder-transparent"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 sm:pr-12 border border-[#999] rounded bg-white text-sm sm:text-base outline-none focus:border-[#5A3D98] focus:border-2 transition-colors peer placeholder-transparent"
                 placeholder="Password"
                 autoComplete="off"
               />
@@ -96,7 +92,7 @@ const MyPTELoginPage = () => {
                 className={`absolute left-3 transition-all text-[#666] pointer-events-none ${
                   password
                     ? '-top-2.5 text-xs bg-white px-1'
-                    : 'top-3 text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:bg-white peer-focus:px-1'
+                    : 'top-2.5 sm:top-3 text-sm sm:text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:bg-white peer-focus:px-1'
                 }`}
               >
                 Password
@@ -108,9 +104,9 @@ const MyPTELoginPage = () => {
                 tabIndex={-1}
               >
                 {showPassword ? (
-                  <Eye size={20} />
+                  <Eye size={18} className="sm:w-5 sm:h-5" />
                 ) : (
-                  <EyeOff size={20} />
+                  <EyeOff size={18} className="sm:w-5 sm:h-5" />
                 )}
               </button>
             </div>
@@ -121,14 +117,14 @@ const MyPTELoginPage = () => {
             <button
               onClick={handleSubmit}
               disabled={isLoading}
-              className="w-full bg-[#5A3D98] hover:bg-[#c1bfff] text-white font-medium py-3 px-6 transition-colors disabled:opacity-50 disabled:cursor-not-allowed rounded-3xl"
+              className="w-full bg-[#5A3D98] hover:bg-[#c1bfff] text-white font-medium py-2.5 sm:py-3 px-6 transition-colors disabled:opacity-50 disabled:cursor-not-allowed rounded-3xl text-sm sm:text-base"
             >
               {isLoading ? 'Logging in...' : 'Log in'}
             </button>
           </div>
 
-          {/* Remember Me & Forgot Links - Single Row */}
-          <div className="flex items-center justify-between mb-6 text-sm">
+          {/* Remember Me & Forgot Links */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3 sm:gap-0 text-xs sm:text-sm">
             <div className="flex items-center">
               <input
                 type="checkbox"
@@ -141,13 +137,12 @@ const MyPTELoginPage = () => {
                 Remember me
               </label>
             </div>
-            <div className="text-sm text-[#666]">
+            <div className="text-[#666]">
               Forgot your{' '}
               <a href="#" className="text-[#5A3D98] hover:underline">
                 username
               </a>
               {' '}or{' '}
-
               <a href="#" className="text-[#5A3D98] hover:underline">
                 password
               </a>
@@ -158,7 +153,7 @@ const MyPTELoginPage = () => {
           {/* Separator with Lines */}
           <div className="relative flex items-center mb-4">
             <div className="flex-grow border-t border-gray-300"></div>
-            <span className="mx-4 text-[#512EAB] text-sm font-medium whitespace-nowrap">
+            <span className="mx-3 sm:mx-4 text-[#512EAB] text-xs sm:text-sm font-medium whitespace-nowrap">
               Need a myPTE account?
             </span>
             <div className="flex-grow border-t border-gray-300"></div>
@@ -168,7 +163,7 @@ const MyPTELoginPage = () => {
           <div>
             <a
               href="#"
-              className="block w-full text-center bg-white border-2 border-[#5A3D98] text-[#5A3D98] hover:bg-[#0d004d] hover:text-[#fff] font-medium py-3 px-6 rounded-3xl transition-colors"
+              className="block w-full text-center bg-white border-2 border-[#5A3D98] text-[#5A3D98] hover:bg-[#0d004d] hover:text-[#fff] font-medium py-2.5 sm:py-3 px-6 rounded-3xl transition-colors text-sm sm:text-base"
             >
               Sign up
             </a>
@@ -176,8 +171,8 @@ const MyPTELoginPage = () => {
         </div>
 
         {/* Footer */}
-        <div className="text-center text-xs text-[#666]">
-          <div className="mb-2 flex items-center justify-center gap-2">
+        <div className="text-center text-xs text-[#666] px-4">
+          <div className="mb-2 flex flex-wrap items-center justify-center gap-2">
             <a href="#" className="hover:underline">
               Privacy policy
             </a>

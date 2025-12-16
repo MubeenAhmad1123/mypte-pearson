@@ -65,10 +65,10 @@ export default function WelcomePage() {
         <h1 className="text-3xl font-light sm:text-4xl text-[#0d004d] mb-4 text-center">Welcome</h1>
 
         {/* Banner under Welcome */}
-        <div className="bg-[#56E2E1] py-4 px-4 text-center rounded-lg mb-6">
-          <p className="text-[#0d004d] font-medium text-sm sm:text-base">
+        <div className="bg-[#56E2E1] py-4 px-4 text-center mb-6">
+          <a href="#"><p className="text-[#0d004d]  font-bold text-sm sm:text-base hover:underline">
             Smart Prep: try our new free Study Plan for PTE Academic
-          </p>
+          </p></a>
         </div>
 
         {/* Two Column Layout */}
@@ -90,13 +90,13 @@ export default function WelcomePage() {
                 </div>
               </div>
 
-              <button className="w-full bg-[#5B3A9D] hover:bg-[#BAB8F8] text-white font-medium py-3 rounded-full transition-colors text-sm sm:text-base">
-                View your Score Report
+              <button className="w-full bg-[#5B3A9D] hover:bg-[#BAB8F8] text-white font-medium py-3 rounded-full transition-colors text-sm sm:text-xl">
+                <a href="/activity">View your Score Report</a>
               </button>
             </div>
 
             {/* Re-book Test Card */}
-            <div className="bg-white rounded-lg border border-[#C1BFFF] shadow-sm p-6 text-center">
+            <div className="bg-white rounded-lg border border-[#C1BFFF] shadow-sm p-6 text-center order-2 lg:order-2">
               <h2 className="text-xl sm:text-2xl text-gray-800 mb-4 font-semibold">Re-book test</h2>
               <p className="text-gray-600 mb-4 text-sm sm:text-base">
                 Click below to re-book your test
@@ -105,12 +105,13 @@ export default function WelcomePage() {
               <div className="text-center mb-6">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">PTE Core</h3>
                 <p className="text-gray-700 text-sm mb-2">
-                  Pearson Professional Centres-Toronto (Downtown) ON
+                  Pearson professional centers-Lahore,
+Vue,
                 </p>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                  10 St Mary Street<br />
-                  Suite 502<br />
-                  Toronto, ON M4Y 1P9 281
+                  Office number 13,
+                  Mall of Lahore,
+                   Pakistan
                 </p>
               </div>
 
@@ -120,7 +121,7 @@ export default function WelcomePage() {
             </div>
 
             {/* Feedback Card */}
-            <div className="bg-white rounded-lg shadow-sm border border-[#C1BFFF] p-6 text-center">
+            <div className="bg-white rounded-lg shadow-sm border border-[#C1BFFF] p-6 text-center order-5 lg:order-3">
               <h2 className="text-2xl font-bold text-gray-900 mb-3">
                 We want to hear from you
               </h2>
@@ -129,12 +130,11 @@ export default function WelcomePage() {
               </p>
               
               <div className="flex justify-center mb-6">
-                <div className="relative w-20 h-20">
-                  <svg className="w-20 h-20 text-[#9b87c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-300 to-purple-500 opacity-20 rounded-full blur-xl"></div>
-                </div>
+                <img 
+                  src="/feedback.png" 
+                  alt="Feedback" 
+                  className="w-20 h-20 object-contain"
+                />
               </div>
 
               <button className="border-2 border-gray-900 text-gray-900 hover:bg-gray-50 px-8 py-2.5 rounded-full font-medium transition-colors">
