@@ -1,149 +1,245 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, ShoppingCart, FileText } from 'lucide-react';
 
 export default function WelcomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F5F3F8]">
       {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
-          <div className="flex items-center justify-between">
-            {/* Left Side - Logo and Navigation */}
-            <div className="flex items-center gap-6">
-              {/* Logo */}
-              <div className="flex items-center gap-2 sm:gap-3">
-                <img 
-                  src="/logo.webp" 
-                  alt="Logo" 
-                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-                />
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <span className="text-gray-800 text-lg sm:text-xl font-light">Pearson</span>
-                  <span className="text-gray-400 text-sm sm:text-base">|</span>
-                  <span className="text-gray-800 text-base sm:text-lg font-light">PTE</span>
-                </div>
-              </div>
-
-              {/* Desktop Navigation - Next to Logo */}
-              <nav className="hidden md:flex items-center gap-6 text-sm">
-                <a href="/welcome" className="text-gray-600 hover:text-[#088BB4] py-2">
-                  myPTE
-                </a>
-                <a href="/activity" className="text-gray-600 hover:text-[#088BB4] py-2">
-                  My Activity
-                </a>
-                <a href="#" className="text-gray-600 hover:text-[#088BB4] py-2">
-                  Prepare
-                </a>
-                <a href="#" className="text-gray-600 hover:text-[#088BB4] py-2">
-                  Help
-                </a>
-              </nav>
+      <header className="bg-[#0d004d] shadow-sm">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Left Side - Logo */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <img 
+                src="/logo2.svg" 
+                alt="Logo" 
+                className="w-[160px] h-[60px] sm:w-[160px] sm:h-[60px] object-contain" 
+              />
             </div>
 
-            {/* Right Side - User and Menu */}
+            {/* Center - Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8 text-sm h-full">
+              <a href="/welcome" className="text-[#B7B3CA] hover:text-gray-200 h-full text-base font-bold flex items-center relative border-b-3 border-[#f9c642]">
+                myPTE
+              </a>
+              <a href="/activity" className="text-[#B7B3CA] hover:text-gray-200 text-base h-full font-bold flex items-center relative">
+                My Activity
+              </a>
+              <a href="#" className="text-[#B7B3CA] hover:text-gray-200 h-full text-base font-bold flex items-center relative">
+                Smart Prep
+              </a>
+              <a href="#" className="text-[#B7B3CA] hover:text-gray-200 h-full text-base font-bold flex items-center relative">
+                Help
+              </a>
+            </nav>
+
+            {/* Right Side - Cart & Menu Button */}
             <div className="flex items-center gap-2 sm:gap-4">
-              <button className="w-9 h-9 sm:w-10 sm:h-10 bg-[#088BB4] rounded-full flex items-center justify-center text-white font-semibold text-sm sm:text-base">
-                F
+              {/* Shopping Cart */}
+              <button className="p-1.5 sm:p-2 hover:bg-[#3d4f8f] rounded relative">
+                <ShoppingCart size={20} className="sm:w-6 sm:h-6 text-white" />
               </button>
+
+              {/* User Menu Button */}
               <button 
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="p-1.5 sm:p-2 hover:bg-gray-100 rounded"
+                className="flex items-center gap-2 bg-white hover:bg-gray-100 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors"
               >
-                <Menu size={20} className="sm:w-6 sm:h-6 text-gray-700" />
+                <Menu size={18} className="sm:w-5 sm:h-5 text-[#0d004d]" />
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#E8E4F3] flex items-center justify-center">
+                  <span className="text-[#0d004d] font-bold text-sm sm:text-base">MA</span>
+                </div>
               </button>
             </div>
           </div>
-
-          {/* Mobile Navigation - Below Header */}
-          <nav className="md:hidden border-t border-gray-200 mt-3 pt-3">
-            <div className="flex items-center justify-center gap-4 text-xs">
-              <a href="/welcome" className="text-gray-600 hover:text-[#088BB4]">
-                myPTE
-              </a>
-              <a href="/activity" className="text-gray-600 hover:text-[#088BB4]">
-                My Activity
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#088BB4]">
-                Prepare
-              </a>
-              <a href="#" className="text-gray-600 hover:text-[#088BB4]">
-                Help
-              </a>
-            </div>
-          </nav>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
         {/* Welcome Section */}
-        <h1 className="text-2xl sm:text-3xl text-gray-800 mb-6 sm:mb-8 text-center">Welcome</h1>
+        <h1 className="text-3xl font-light sm:text-4xl text-[#0d004d] mb-4 text-center">Welcome</h1>
 
-        {/* Re-book Test Card */}
-        <div className="bg-white rounded border border-gray-300 shadow-sm p-5 sm:p-6 mb-6 max-w-2xl mx-auto">
-          <h2 className="text-xl sm:text-2xl text-gray-800 mb-3 sm:mb-4 text-center">Re-book test</h2>
-          <p className="text-gray-600 mb-5 sm:mb-6 text-center text-sm sm:text-base">
-            Click below to re-book your test
+        {/* Banner under Welcome */}
+        <div className="bg-[#56E2E1] py-4 px-4 text-center rounded-lg mb-6">
+          <p className="text-[#0d004d] font-medium text-sm sm:text-base">
+            Smart Prep: try our new free Study Plan for PTE Academic
           </p>
-
-          <div className="text-center mb-5 sm:mb-6">
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">PTE Academic</h3>
-            <p className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">
-              Pearson Professional Centers-Lahore, Pakistan
-            </p>
-            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-              Pearson Vue<br />
-              Office Number 13<br />
-              First Floor, Mall Of Lahore<br />
-              Lahore 54000<br />
-              Punjab<br />
-              Pakistan
-            </p>
-          </div>
-
-          <button className="w-full bg-[#088BB4] hover:bg-[#066a8a] text-white font-medium py-2.5 sm:py-3 rounded transition-colors text-sm sm:text-base">
-            Re-book PTE Academic
-          </button>
         </div>
 
-        {/* Find Your Test Card */}
-        <div className="bg-white rounded border border-gray-300 shadow-sm p-5 sm:p-6 max-w-2xl mx-auto">
-          <h2 className="text-xl sm:text-2xl text-gray-800 mb-5 sm:mb-6 text-center">Find your Test</h2>
-          
-          <div className="flex justify-center mb-4 sm:mb-6">
-            <div className="relative w-40 h-40 sm:w-48 sm:h-48">
-              {/* Globe Illustration */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-green-400 to-blue-500 relative overflow-hidden">
-                  {/* Continents */}
-                  <div className="absolute top-6 sm:top-8 left-6 sm:left-8 w-12 sm:w-16 h-10 sm:h-12 bg-green-600 rounded-full opacity-80"></div>
-                  <div className="absolute bottom-10 sm:bottom-12 right-5 sm:right-6 w-16 sm:w-20 h-12 sm:h-16 bg-green-600 rounded-tl-full opacity-80"></div>
-                  <div className="absolute top-1/2 left-1/4 w-10 sm:w-12 h-6 sm:h-8 bg-green-600 rounded-full opacity-80"></div>
-                  
-                  {/* Clouds */}
-                  <div className="absolute -top-1 sm:-top-2 right-3 sm:right-4 w-10 sm:w-12 h-5 sm:h-6 bg-white/30 rounded-full"></div>
-                  <div className="absolute top-3 sm:top-4 -left-1 sm:-left-2 w-8 sm:w-10 h-4 sm:h-5 bg-white/30 rounded-full"></div>
-                  <div className="absolute bottom-5 sm:bottom-6 right-1 sm:right-2 w-11 sm:w-14 h-5 sm:h-6 bg-white/30 rounded-full"></div>
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* LEFT COLUMN */}
+          <div className="space-y-6">
+            {/* Your Results Card */}
+            <div className="bg-white rounded-lg border border-[#C1BFFF] shadow-sm p-6 text-center">
+              <h2 className="text-xl sm:text-2xl text-gray-800 mb-4 font-semibold">
+                Your results are now available!
+              </h2>
+              
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <FileText className="w-16 h-16 sm:w-20 sm:h-20 text-[#5B3A9D]" />
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">1</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Accessibility Icon */}
-              <div className="absolute bottom-0 left-0 w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
-                  <circle cx="10" cy="7" r="1.5"/>
-                  <path d="M10 9c-1.5 0-2 1-2 2v3h1v-3c0-.5.2-1 1-1s1 .5 1 1v3h1v-3c0-1-.5-2-2-2z"/>
-                </svg>
+              <button className="w-full bg-[#5B3A9D] hover:bg-[#BAB8F8] text-white font-medium py-3 rounded-full transition-colors text-sm sm:text-base">
+                View your Score Report
+              </button>
+            </div>
+
+            {/* Re-book Test Card */}
+            <div className="bg-white rounded-lg border border-[#C1BFFF] shadow-sm p-6 text-center">
+              <h2 className="text-xl sm:text-2xl text-gray-800 mb-4 font-semibold">Re-book test</h2>
+              <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                Click below to re-book your test
+              </p>
+
+              <div className="text-center mb-6">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">PTE Core</h3>
+                <p className="text-gray-700 text-sm mb-2">
+                  Pearson Professional Centres-Toronto (Downtown) ON
+                </p>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  10 St Mary Street<br />
+                  Suite 502<br />
+                  Toronto, ON M4Y 1P9 281
+                </p>
+              </div>
+
+              <button className="w-full bg-[#f9c642] hover:bg-[#e0b538] text-[#0d004d] font-medium py-3 rounded-full transition-colors text-sm sm:text-base">
+                Re-book PTE Core
+              </button>
+            </div>
+
+            {/* Feedback Card */}
+            <div className="bg-white rounded-lg shadow-sm border border-[#C1BFFF] p-6 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                We want to hear from you
+              </h2>
+              <p className="text-gray-600 mb-6 text-sm">
+                Help us improve by providing your suggestions and input.
+              </p>
+              
+              <div className="flex justify-center mb-6">
+                <div className="relative w-20 h-20">
+                  <svg className="w-20 h-20 text-[#9b87c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-300 to-purple-500 opacity-20 rounded-full blur-xl"></div>
+                </div>
+              </div>
+
+              <button className="border-2 border-gray-900 text-gray-900 hover:bg-gray-50 px-8 py-2.5 rounded-full font-medium transition-colors">
+                Give us your feedback
+              </button>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="space-y-6">
+            {/* About the Test Card */}
+            <div className="bg-white rounded-lg shadow-sm border border-[#C1BFFF] p-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">About the test</h2>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                <div className="flex-1">
+                  <p className="text-gray-700 text-sm mb-3">
+                    The test format depends on the test you have chosen. PTE Academic and PTE Core assess four skills: listening, reading, speaking and writing. PTE Home tests assess speaking and listening skills only.
+                  </p>
+                  <p className="text-gray-700 text-sm mb-4">
+                    Before you take the test, you should familiarize yourself with the different question types contained within each test.
+                  </p>
+                </div>
+                <img 
+                  src="/Students1_1.png" 
+                  alt="Students studying" 
+                  className="w-full sm:w-40 h-32 object-cover rounded flex-shrink-0"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <a href="#" className="block text-[#5B3A9D] hover:underline font-medium text-sm">
+                  Learn about the PTE Academic test format
+                </a>
+                <a href="#" className="block text-[#5B3A9D] hover:underline font-medium text-sm">
+                  Learn about the PTE Core test format
+                </a>
+                <a href="#" className="block text-[#5B3A9D] hover:underline font-medium text-sm">
+                  Learn about the PTE Home test format
+                </a>
+              </div>
+            </div>
+
+            {/* Prepare for the Test Card */}
+            <div className="bg-white rounded-lg shadow-sm border border-[#C1BFFF] p-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Prepare for the test</h2>
+              
+              <p className="text-gray-700 text-sm mb-3">
+                All test takers should prepare for their PTE test, even if English is your first language.
+              </p>
+
+              <p className="text-gray-700 text-sm mb-3">
+                As well as familiarizing yourself with the test format, you can buy official PTE Academic preparation resources.
+              </p>
+
+              <a href="#" className="block text-[#5B3A9D] hover:underline font-medium mb-4 text-sm">
+                Buy PTE Academic preparation resources
+              </a>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                <div className="flex-1">
+                  <p className="text-gray-700 text-sm mb-2">
+                    Already purchased your <strong>PTE Academic</strong> preparation resources? Access them{' '}
+                    <a href="#" className="text-[#5B3A9D] hover:underline font-medium">here</a>
+                  </p>
+                  <p className="text-gray-700 text-sm mb-4">
+                    For <strong>PTE Academic</strong>, <strong>PTE Core</strong> and <strong>PTE Home</strong> you can find a range of free preparation resources below.
+                  </p>
+                </div>
+                <img 
+                  src="/Students2_1.png" 
+                  alt="Student preparing for test" 
+                  className="w-full sm:w-40 h-32 object-cover rounded flex-shrink-0"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <a href="#" className="block text-[#5B3A9D] hover:underline font-medium text-sm">
+                  PTE Academic preparation resources
+                </a>
+                <a href="#" className="block text-[#5B3A9D] hover:underline font-medium text-sm">
+                  PTE Core preparation resources
+                </a>
+                <a href="#" className="block text-[#5B3A9D] hover:underline font-medium text-sm">
+                  PTE Home preparation resources
+                </a>
               </div>
             </div>
           </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="text-center py-6 px-4 mt-8">
+        <div className="mb-2">
+          <a href="#" className="text-[#5B3A9D] hover:underline text-sm">Privacy policy</a>
+          <span className="text-gray-600 mx-2">|</span>
+          <a href="#" className="text-[#5B3A9D] hover:underline text-sm">Cookies</a>
+          <span className="text-gray-600 mx-2">|</span>
+          <a href="#" className="text-[#5B3A9D] hover:underline text-sm">Contact us</a>
+        </div>
+        <p className="text-gray-600 text-sm">
+          Copyright © 1996–2025 Pearson. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }

@@ -1,6 +1,7 @@
-"use client";
+"use client";  // Make sure it's a client component
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'; // Correct import for Next.js 13+
 import { Eye, EyeOff } from 'lucide-react';
 
 const MyPTELoginPage = () => {
@@ -9,16 +10,23 @@ const MyPTELoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();  // Correct usage of useRouter in a client component
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate login
-    setTimeout(() => {
-      console.log('Login attempted with:', { username, password, rememberMe });
+    // Check if the username and password are correct
+    if (username === 'admin' && password === 'admin123') {
+      // Simulate login success and redirect to the welcome page
+      setTimeout(() => {
+        router.push('/welcome'); // Redirect to the welcome page
+        setIsLoading(false);
+      }, 1000);
+    } else {
       setIsLoading(false);
-    }, 1000);
+      alert('Invalid username or password');
+    }
   };
 
   return (
