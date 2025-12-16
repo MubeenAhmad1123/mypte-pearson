@@ -1,9 +1,17 @@
-"use client";
+"use client"; // Make sure it's a client component
 
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingCart, Info } from 'lucide-react';
 
-export default function ScoreCardPage() {
+// Define types for the props of CircleScore
+interface CircleScoreProps {
+  score: number;
+  color: string;
+  label: string;
+  delay?: number;  // Optional prop with default value
+}
+
+const ScoreCardPage: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [animateScores, setAnimateScores] = useState(false);
 
@@ -11,7 +19,7 @@ export default function ScoreCardPage() {
     setTimeout(() => setAnimateScores(true), 300);
   }, []);
 
-  const CircleScore = ({ score, color, label, delay = 0 }) => {
+  const CircleScore: React.FC<CircleScoreProps> = ({ score, color, label, delay = 0 }) => {
     const [currentScore, setCurrentScore] = useState(0);
 
     useEffect(() => {
@@ -290,11 +298,11 @@ export default function ScoreCardPage() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Yellow Header */}
             <div className="bg-[#f9c642] p-6">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1">
                 <img 
                   src="/logo1.webp" 
                   alt="Logo" 
-                  className="w-[120px] h-[45px] object-contain" 
+                  className="w-[50px] h-[70px] mb-0 object-contain" 
                 />
                 <div>
                   <h1 className="text-2xl font-bold text-[#0d004d]">
@@ -439,4 +447,6 @@ export default function ScoreCardPage() {
       </footer>
     </div>
   );
-}
+};
+
+export default ScoreCardPage;
