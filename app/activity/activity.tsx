@@ -1,14 +1,13 @@
-"use client"; // Make sure it's a client component
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingCart, Info } from 'lucide-react';
 
-// Define types for the props of CircleScore
 interface CircleScoreProps {
   score: number;
   color: string;
   label: string;
-  delay?: number;  // Optional prop with default value
+  delay?: number;
 }
 
 const ScoreCardPage: React.FC = () => {
@@ -182,7 +181,7 @@ const ScoreCardPage: React.FC = () => {
                     <span className="font-semibold">Test Centre Country:</span><br />Pakistan
                   </p>
                   <p className="text-gray-700 text-xs">
-                    <span className="font-semibold">Test Date:</span><br />13 Dec 2025
+                    <span className="font-semibold">Test Date:</span><br />13 December 2025
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -190,7 +189,7 @@ const ScoreCardPage: React.FC = () => {
                     <span className="font-semibold">Test Centre ID:</span><br />87625
                   </p>
                   <p className="text-gray-700 text-xs">
-                    <span className="font-semibold">Valid Until:</span><br />13 Dec 2027
+                    <span className="font-semibold">Valid Until:</span><br />13 December 2027
                   </p>
                 </div>
                 <p className="text-gray-700 text-xs">
@@ -244,32 +243,32 @@ const ScoreCardPage: React.FC = () => {
                 <div className="flex items-center gap-1 md:gap-1.5">
                   <span className="text-xs md:text-sm text-gray-600 w-14 md:w-16 text-right">Listening</span>
                   <span className="text-xs md:text-sm font-semibold text-gray-800 w-6">64</span>
-                  <div className="flex-1 bg-gray-200 h-8 md:h-10 rounded overflow-hidden">
-                    <div className="h-full bg-[#1e3a8a] transition-all duration-1500 rounded" style={{ width: animateScores ? '71.1%' : '0%' }}></div>
+                  <div className="flex-1 h-8 md:h-10 relative">
+                    <div className="absolute h-full bg-[#1e3a8a] transition-all duration-1500 rounded" style={{ width: animateScores ? '71.1%' : '0%' }}></div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1 md:gap-1.5">
                   <span className="text-xs md:text-sm text-gray-600 w-14 md:w-16 text-right">Reading</span>
                   <span className="text-xs md:text-sm font-semibold text-gray-800 w-6">52</span>
-                  <div className="flex-1 bg-gray-200 h-8 md:h-10 rounded overflow-hidden">
-                    <div className="h-full bg-[#eab308] transition-all duration-1500 rounded" style={{ width: animateScores ? '57.8%' : '0%', transitionDelay: '200ms' }}></div>
+                  <div className="flex-1 h-8 md:h-10 relative">
+                    <div className="absolute h-full bg-[#eab308] transition-all duration-1500 rounded" style={{ width: animateScores ? '57.8%' : '0%', transitionDelay: '200ms' }}></div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1 md:gap-1.5">
                   <span className="text-xs md:text-sm text-gray-600 w-14 md:w-16 text-right">Speaking</span>
                   <span className="text-xs md:text-sm font-semibold text-gray-800 w-6">63</span>
-                  <div className="flex-1 bg-gray-200 h-8 md:h-10 rounded overflow-hidden">
-                    <div className="h-full bg-[#6b7280] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '400ms' }}></div>
+                  <div className="flex-1 h-8 md:h-10 relative">
+                    <div className="absolute h-full bg-[#6b7280] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '400ms' }}></div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1 md:gap-1.5">
                   <span className="text-xs md:text-sm text-gray-600 w-14 md:w-16 text-right">Writing</span>
                   <span className="text-xs md:text-sm font-semibold text-gray-800 w-6">63</span>
-                  <div className="flex-1 bg-gray-200 h-8 md:h-10 rounded overflow-hidden">
-                    <div className="h-full bg-[#a855f7] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '600ms' }}></div>
+                  <div className="flex-1 h-8 md:h-10 relative">
+                    <div className="absolute h-full bg-[#a855f7] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '600ms' }}></div>
                   </div>
                 </div>
               </div>
@@ -308,7 +307,7 @@ const ScoreCardPage: React.FC = () => {
                   <h1 className="text-2xl font-bold text-[#0d004d]">
                     Pearson | PTE Core | Score Report
                   </h1>
-                  <p className="text-sm text-[#0d004d]">Score Report Code: 3sf</p>
+                  <p className="text-sm text-[#0d004d]">Score Report Code: 43231HMWV</p>
                 </div>
               </div>
             </div>
@@ -359,74 +358,87 @@ const ScoreCardPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Two Columns Below */}
-              <div className="grid grid-cols-2 gap-8">
-                {/* Left Column - Skills Breakdown */}
-                <div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-4">Skills Breakdown</h3>
-                  <div className="space-y-3 relative">
-                    <div className="absolute left-[67%] top-0 bottom-0 flex flex-col items-center" style={{ transform: 'translateX(-50%)' }}>
-                      <div className="text-xs font-semibold text-gray-700 mb-1 whitespace-nowrap">Overall 60</div>
-                      <div className="relative h-full"><div className="w-0.5 h-full bg-gray-400"></div></div>
+              {/* Skills Breakdown - Full Width */}
+              <div className="mb-8">
+                <h3 className="text-lg font-bold text-gray-800 mb-4">Skills Breakdown</h3>
+                <div className="space-y-3 relative">
+                  <div className="absolute left-[67%] top-0 bottom-0 flex flex-col items-center" style={{ transform: 'translateX(-50%)' }}>
+                    <div className="text-xs font-semibold text-gray-700 mb-1 whitespace-nowrap">Overall 60</div>
+                    <div className="relative h-full"><div className="w-0.5 h-full bg-gray-400"></div></div>
+                  </div>
+
+                  <div className="h-5"></div>
+
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs text-gray-600 w-16 text-right">Listening</span>
+                    <span className="text-xs font-semibold text-gray-800 w-6">64</span>
+                    <div className="flex-1 h-12 relative">
+                      <div className="absolute h-full bg-[#1e3a8a] transition-all duration-1500 rounded" style={{ width: animateScores ? '71.1%' : '0%' }}></div>
                     </div>
+                  </div>
 
-                    <div className="h-5"></div>
-
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-600 w-16 text-right">Listening</span>
-                      <span className="text-xs font-semibold text-gray-800 w-6">64</span>
-                      <div className="flex-1 bg-gray-200 h-12 rounded overflow-hidden">
-                        <div className="h-full bg-[#1e3a8a] transition-all duration-1500 rounded" style={{ width: animateScores ? '71.1%' : '0%' }}></div>
-                      </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs text-gray-600 w-16 text-right">Reading</span>
+                    <span className="text-xs font-semibold text-gray-800 w-6">52</span>
+                    <div className="flex-1 h-12 relative">
+                      <div className="absolute h-full bg-[#eab308] transition-all duration-1500 rounded" style={{ width: animateScores ? '57.8%' : '0%', transitionDelay: '200ms' }}></div>
                     </div>
+                  </div>
 
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-600 w-16 text-right">Reading</span>
-                      <span className="text-xs font-semibold text-gray-800 w-6">52</span>
-                      <div className="flex-1 bg-gray-200 h-12 rounded overflow-hidden">
-                        <div className="h-full bg-[#eab308] transition-all duration-1500 rounded" style={{ width: animateScores ? '57.8%' : '0%', transitionDelay: '200ms' }}></div>
-                      </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs text-gray-600 w-16 text-right">Speaking</span>
+                    <span className="text-xs font-semibold text-gray-800 w-6">63</span>
+                    <div className="flex-1 h-12 relative">
+                      <div className="absolute h-full bg-[#6b7280] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '400ms' }}></div>
                     </div>
+                  </div>
 
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-600 w-16 text-right">Speaking</span>
-                      <span className="text-xs font-semibold text-gray-800 w-6">63</span>
-                      <div className="flex-1 bg-gray-200 h-12 rounded overflow-hidden">
-                        <div className="h-full bg-[#6b7280] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '400ms' }}></div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-600 w-16 text-right">Writing</span>
-                      <span className="text-xs font-semibold text-gray-800 w-6">63</span>
-                      <div className="flex-1 bg-gray-200 h-12 rounded overflow-hidden">
-                        <div className="h-full bg-[#a855f7] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '600ms' }}></div>
-                      </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs text-gray-600 w-16 text-right">Writing</span>
+                    <span className="text-xs font-semibold text-gray-800 w-6">63</span>
+                    <div className="flex-1 h-12 relative">
+                      <div className="absolute h-full bg-[#a855f7] transition-all duration-1500 rounded" style={{ width: animateScores ? '70%' : '0%', transitionDelay: '600ms' }}></div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Right Column - Further Information */}
+              {/* Further Information */}
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-gray-800 mb-3">Further Information</h3>
+                <p className="text-xs italic text-gray-700">PTE Core is designed to test English language proficiency for a range of general purposes.</p>
+              </div>
+
+              {/* Two Columns Below */}
+              <div className="grid grid-cols-2 gap-8">
+                {/* Left Column - Candidate Information */}
                 <div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-4">Further Information</h3>
-                  <div className="text-sm text-gray-700 space-y-3">
-                    <p className="text-xs italic">PTE Core is designed to test English language proficiency for a range of general purposes.</p>
-                    
-                    <div className="space-y-1.5 pt-3">
-                      <p className="text-xs"><span className="font-semibold">Test Centre Country:</span> Pakistan</p>
-                      <p className="text-xs"><span className="font-semibold">Test Date:</span> 13 Dec 2025</p>
-                      <p className="text-xs"><span className="font-semibold">Test Centre ID:</span> 87625</p>
-                      <p className="text-xs"><span className="font-semibold">Valid Until:</span> 13 Dec 2027</p>
-                      <p className="text-xs"><span className="font-semibold">Test Centre:</span> Pearson Professional Center Lahore</p>
-                    </div>
-
-                    <div className="pt-3 space-y-1.5">
-                      <p className="text-xs"><span className="font-semibold">Date of Birth:</span> 6 March 2004</p>
-                      <p className="text-xs"><span className="font-semibold">Gender:</span> Male</p>
-                      <p className="text-xs"><span className="font-semibold">Country of Citizenship:</span> Pakistan</p>
-                      <p className="text-xs"><span className="font-semibold">Country of Residence:</span> Pakistan</p>
-                    </div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">Candidate Information</h3>
+                  <div className="space-y-1.5">
+                    <p className="text-xs text-gray-700"><span className="font-semibold">Date of Birth:</span> 6 March 2004</p>
+                    <p className="text-xs text-gray-700"><span className="font-semibold">Gender:</span> Male</p>
+                    <p className="text-xs text-gray-700"><span className="font-semibold">Country of Citizenship:</span> Pakistan</p>
+                    <p className="text-xs text-gray-700"><span className="font-semibold">Country of Residence:</span> Pakistan</p>
                   </div>
+                </div>
+
+                {/* Right Column - Test Information */}
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-4">Test Information</h3>
+                  <div className="space-y-1.5">
+                    <p className="text-xs text-gray-700"><span className="font-semibold">Test Date:</span> 13 December 2025</p>
+                    <p className="text-xs text-gray-700"><span className="font-semibold">Valid Until:</span> 13 December 2027</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Test Center Information - Full Width */}
+              <div className="mt-6">
+                <h3 className="text-lg font-bold text-gray-800 mb-3">Test Center Information</h3>
+                <div className="space-y-1.5">
+                  <p className="text-xs text-gray-700"><span className="font-semibold">Test Center Country:</span> Pakistan</p>
+                  <p className="text-xs text-gray-700"><span className="font-semibold">Test Center ID:</span> 87625</p>
+                  <p className="text-xs text-gray-700"><span className="font-semibold">Test Center:</span> Pearson Professional Center Lahore</p>
                 </div>
               </div>
             </div>
